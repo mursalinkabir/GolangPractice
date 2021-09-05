@@ -1,0 +1,32 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+	"math"
+)
+
+func Sqrt(value float64) (float64, error) {
+	if value < 0 {
+		return 0, errors.New("Negative value is passed")
+	}
+	return math.Sqrt(value), nil
+
+}
+func main() {
+	res, err := Sqrt(-1)
+
+	if err != nil {
+
+		fmt.Println(err)
+	} else {
+		fmt.Println(res)
+	}
+	res, err = Sqrt(9)
+
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(res)
+	}
+}
